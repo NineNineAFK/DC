@@ -1,4 +1,4 @@
-%Nikunj Purohit
+%Aaditya Dawkar
 %Polar NRZ
 clc;
 close all;

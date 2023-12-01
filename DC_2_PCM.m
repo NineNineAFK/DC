@@ -1,28 +1,22 @@
-%Nikunj Purohit
 %PCM
-close all;
+
 clc;
+f = 2;
+a = 2;
+fs = 20 * f;
+t = 0:1/fs:1; 
 
-A=2;
-f=3;
-t=0:0.01:1;
+x = a * sin(2 * pi * f * t);
+x1 = x + a;
 
-X= A*sin(2*pi*f*t);
-%plot(t,X);
-%subplot(4,2,1);
-%title("signal");
+q_op = round(x1);
 
-Level_shift= X + A;
-%plot(t,Level_shift);
-%subplot(4,2,2);
-%title("Level Shifting")
+enco = de2bi(q_op, 'left-msb');
+deco = bi2de(enco, 'left-msb');
 
-quant=round(Level_shift);
-%plot(t,quant);
-%subplot(4,2,3);
-%title("Level Shifting")
+xr = deco - a;
 
-enc=de2bi(quant);
-dec=bi2de(enc);
-Level_dshift = dec - A;
-plot(t,X,"r-",t,Level_dshift,"g+-");
+plot(t, x, 'r-', t, xr, 'g+-');
+xlabel('time');
+ylabel('amplitude');
+%legend('Original Signal', 'Reconstructed Signal'); 

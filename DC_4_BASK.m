@@ -1,26 +1,26 @@
-%Nikunj Purohit
+%Aaditya Dawkar
 %BASK
-clc %for clearing the command window
-close all %for closing all the window except command window
-clear all %for deleting all the variables from the memory
+clc 
+close all 
+clear all 
 fc=10;
 fp=5;
 amp=5;
-t=0:0.001:1; % For setting the sampling interval
-c=amp.*sin(2*pi*fc*t);% For Generating Carrier Sine wave
-subplot(3,1,1) %For Plotting The Carrier wave
+t=0:0.001:1; 
+c=amp.*sin(2*pi*fc*t);
+subplot(3,1,1) 
 plot(t,c)
 xlabel('Time')
 ylabel('Amplitude')
 title('Carrier Wave')
-m=amp/2.*square(2*pi*fp*t)+(amp/2);%For Generating Square wave message
-subplot(3,1,2) %For Plotting The Square Binary Pulse (Message)
+m=amp/2.*square(2*pi*fp*t)+(amp/2);
+subplot(3,1,2)
 plot(t,m)
 xlabel('Time')
 ylabel('Amplitude')
 title('Binary Message Pulses')
-w=c.*m; % The Shift Keyed Wave
-subplot(3,1,3) %For Plotting The Amplitude Shift Keyed Wave
+w=c.*m; 
+subplot(3,1,3)
 plot(t,w)
 xlabel('Time')
 ylabel('Amplitude')

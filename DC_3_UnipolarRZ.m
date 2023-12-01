@@ -1,4 +1,4 @@
-%Nikunj Purohit
+%Aaditya Dawkar
 %Unipolar RZ
 clc;
 close all;

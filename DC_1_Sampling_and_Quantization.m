@@ -1,10 +1,10 @@
-% Nikunj Purohit(Sampling and Quantization)
+% Aaditya Dawkar(Sampling and Quantization)
 close all;
 clc;
-t=0:0.01:1; %Time Vector
-fm=10; %Message (Input) signal amplitude 
-Am=1; %(Input) signal amplitude
-x=Am*sin(2*pi*fm*t); %Message signal
+t=0:0.01:1; 
+fm=10; 
+Am=1; 
+x=Am*sin(2*pi*fm*t); 
 subplot(2,2,1);
 plot(t,x, 'Linewidth',2);
 xlabel('time');
